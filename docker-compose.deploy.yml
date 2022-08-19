@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  NOME_DA_APLICACAO:
+    container_name: ${ASPNETCORE_CONTAINER_NAME}
+    image: NOME_DA_APLICACAO
+    build:
+      context: .
+      dockerfile: WebApi/Dockerfile
+      args:
+        - SERVICE_PORT=${ASPNETCORE_PORT}
+    ports:
+        - "${ASPNETCORE_HTTP_PORT}:${ASPNETCORE_PORT}"
+
